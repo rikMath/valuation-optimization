@@ -1,0 +1,23 @@
+O que falta fazer:
+1. Descobrir quais valores de a e b utilizar para o incremento (ao menos inicialmente);
+2. Inserir uma variável de churn inicialmente como uma quantidade fixa, por exemplo, 10% do total de clientes; (isto pode fazer com que q seja flutuante, pensar em como resolver ou utilizar um churn como valor absoluto)
+
+Assim acabo a otimização inicial de MKT
+
+Próximos passos:
+- Adicionar FCI  ao cálculo do FCF (utilizar equações desenvolvidas)
+- Adicionar valores consistentes de WACC
+- Fazer com que o Incremento e Churn utilizem estocasticidade (precisa de um estudo prévio sobre qual modelo utilizar)
+
+Após estes passos, vem a hora de inserir o WACC como variável.
+- Criar modelo no Pymoo com a entrada do modelo linear
+- Chavear o modelo do pymoo para resolver na otimalidade em cada passo ou a cada x passos para todas as soluções
+- Criar fórmula do re
+- Entender relação entre rd e Dt para modelar
+- Definir restrição de quanto Et pode crescer (baseado no Fluxo de Caixa no mês)
+
+Finalizado este passo, conseguimos otimizar para um único produto. Seria interessante conseguir inserir múltiplos produtos, mas isso é um passo futuro.
+
+> Obs: Para múltiplos produtos, de forma a minimizar os problemas de tempo de otimização, posso tentar utilizar simulação multiagentes em que cada agente representa um produto e a otimização é feita de forma distribuída.
+  Por exemplo, compartilharem o Fluxo de caixa total gerado a cada passo, assim como a dívida total. Aí aplicar alguma forma de consenso de quanto cada produto vai receber de verba levando em consideração o quanto está contribuindo p/ o custo total
+  Mas isto precisa de valer a pena, o modelo precisaria de ser de fato muito grande para inviabilizar.
