@@ -1,13 +1,15 @@
-O que falta fazer:
-1. Descobrir quais valores de a e b utilizar para o incremento (ao menos inicialmente);
-2. Inserir uma variável de churn inicialmente como uma quantidade fixa, por exemplo, 10% do total de clientes; (isto pode fazer com que q seja flutuante, pensar em como resolver ou utilizar um churn como valor absoluto)
+O que falta fazer para finalizar o modelo linear:
+1. Incluir o Churn como uma variável fuzzy
+2. Adicionar FCI  ao cálculo do FCF (utilizar equações desenvolvidas)
+3. Adicionar valores de WACC baseados em parâmetros que podem ser manipulados separadamente
+4. Incluir o Incremento (a e b) como uma variável fuzzy
 
 Assim acabo a otimização inicial de MKT
 
 Próximos passos:
-- Adicionar FCI  ao cálculo do FCF (utilizar equações desenvolvidas)
-- Adicionar valores consistentes de WACC
-- Fazer com que o Incremento e Churn utilizem estocasticidade (precisa de um estudo prévio sobre qual modelo utilizar)
+- Realizar apenas um estudo comparativo trocando q para ser uma variável inteira, de forma a ver como o modelo se comporta e como o M influencia nisto.
+- Aplicar o estudo comparativo do uso de outras formas de gerar os cenários (e.g. markov) e medir com base em métricas de modelos estocásticos.
+- Aplicar estudo comparativo (monte carlo) mostrando como muda o resultado baseado em diferentes valores de WACC.
 
 Após estes passos, vem a hora de inserir o WACC como variável.
 - Criar modelo no Pymoo com a entrada do modelo linear
@@ -21,3 +23,14 @@ Finalizado este passo, conseguimos otimizar para um único produto. Seria intere
 > Obs: Para múltiplos produtos, de forma a minimizar os problemas de tempo de otimização, posso tentar utilizar simulação multiagentes em que cada agente representa um produto e a otimização é feita de forma distribuída.
   Por exemplo, compartilharem o Fluxo de caixa total gerado a cada passo, assim como a dívida total. Aí aplicar alguma forma de consenso de quanto cada produto vai receber de verba levando em consideração o quanto está contribuindo p/ o custo total
   Mas isto precisa de valer a pena, o modelo precisaria de ser de fato muito grande para inviabilizar.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Passos necessários para aplicar o modelo final em um estudo de caso:
+1. Implementar o modelo de otimização inicial com os valores de a e b definidos para o incremento;
+2. Definir o churn, a e b (incremento) para a variável fuzzy do negócio em questão;
+3. Decobrir quanto o produto é atrelado à variação cambial.
+4. Descobrir o WACC atual da empresa e sua estrutura de dívidas.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
