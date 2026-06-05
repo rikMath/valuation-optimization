@@ -1,0 +1,7 @@
+name: valuation-optimization
+channels:
+  - defaults
+dependencies:
+  - pip
+  - ipykernel
+prefix: /Users/henriquealvesbarbosa/opt/anaconda3/envs/valuation-optimization
